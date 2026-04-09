@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Company 1 Contracting LLC</title>
+  <meta name="description" content="Contact Company 1 Contracting at 860-977-4104 for fast quotes, quick scheduling, and reliable home improvement. No job too small.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ HEADER ══ -->
+<header>
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Company 1 Contracting LLC" />
+        <div class="nav-logo-text">
+          <span class="name">Company 1 Contracting</span>
+          <span class="tag">No Job Too Small</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="tel:8609774104" class="nav-cta">📞 860-977-4104</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <h1>Get in Touch</h1>
+    <p>Call for a fast quote — most jobs priced right over the phone.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CALL FIRST ══ -->
+<section style="background:var(--orange); padding:32px 0;">
+  <div class="container text-center">
+    <h2 style="font-size:1.6rem; font-weight:900; color:var(--black); margin-bottom:6px;">⚡ The Fastest Way to Get a Quote</h2>
+    <p style="color:var(--black); opacity:.8; margin-bottom:16px;">Skip the waiting — call us now and most jobs can be quoted immediately.</p>
+    <a href="tel:8609774104" style="font-size:2.4rem; font-weight:900; color:var(--blue); display:inline-block; letter-spacing:1px;">📞 860-977-4104</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CONTACT MAIN ══ -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info Block -->
+      <div class="contact-info-block">
+        <h3>Company 1 Contracting LLC</h3>
+        <p style="margin-bottom:8px;">Ready to help with your next project — big or small.</p>
+        <a href="tel:8609774104" class="big-phone">📞 860-977-4104</a>
+
+        <div class="contact-detail">
+          <span class="ci">📞</span>
+          <div>
+            <div style="font-weight:700;">Call or Text</div>
+            <a href="tel:8609774104" style="color:var(--orange); font-size:.95rem;">860-977-4104</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="ci">⏱</span>
+          <div>
+            <div style="font-weight:700;">Hours</div>
+            <div style="color:rgba(255,255,255,.65); font-size:.9rem;">Mon–Sat: 7:00 AM – 7:00 PM<br>Sunday: By appointment</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="ci">📞</span>
+          <div>
+            <div style="font-weight:700;">Phone Quotes</div>
+            <div style="color:rgba(255,255,255,.65); font-size:.9rem;">Most jobs can be quoted over the phone — fast &amp; convenient.</div>
+          </div>
+        </div>
+        <div class="contact-detail" style="border:none;">
+          <span class="ci">✅</span>
+          <div>
+            <div style="font-weight:700;">Licensed &amp; Insured</div>
+            <div style="color:rgba(255,255,255,.65); font-size:.9rem;">Work with confidence — your home is in good hands.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,.15);">
+          <p style="font-size:.85rem; color:rgba(255,255,255,.5); font-style:italic;">"We show up on time, communicate clearly, and stand behind every job."</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <h3>Send Us a Message</h3>
+        <p style="color:#666; font-size:.9rem; margin-bottom:28px;">Fill out the form below and we'll get back to you promptly. For the fastest response, give us a call!</p>
+
+        <form onsubmit="handleSubmit(event)">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(860) 555-0000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Type of Service</label>
+            <select id="service" name="service">
+              <option value="">— Select a service —</option>
+              <option>Home Remodeling</option>
+              <option>Kitchen Renovation</option>
+              <option>Bathroom Renovation</option>
+              <option>Basement Finishing</option>
+              <option>Home Repairs / Handyman</option>
+              <option>Custom Carpentry</option>
+              <option>Exterior Work / Siding</option>
+              <option>Deck Building / Repair</option>
+              <option>Painting (Interior or Exterior)</option>
+              <option>Flooring Installation</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Description *</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project — what needs to be done, any measurements, timeline, etc." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-blue" style="width:100%; padding:16px; font-size:1rem;">
+            Send Message — We'll Be in Touch!
+          </button>
+
+          <p style="font-size:.8rem; color:#999; margin-top:12px; text-align:center;">Or skip the form and call us directly: <a href="tel:8609774104" style="color:var(--blue); font-weight:700;">860-977-4104</a></p>
+        </form>
+
+        <div id="successMsg" style="display:none; background:#e8f5e9; border:1.5px solid #4caf50; border-radius:6px; padding:20px; margin-top:20px; text-align:center;">
+          <div style="font-size:1.8rem; margin-bottom:8px;">✅</div>
+          <strong>Message Sent!</strong><br>
+          <span style="font-size:.9rem; color:#555;">Thank you — we'll be in touch soon. For faster response, call <a href="tel:8609774104">860-977-4104</a>.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ QUICK REASONS ══ -->
+<section class="section section-alt">
+  <div class="container text-center">
+    <span class="section-tag">Why Call Us</span>
+    <h2 class="section-title">What to Expect When You Call</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; margin-top:40px; text-align:left;">
+      <div style="background:#fff; padding:28px; border-radius:8px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.06);">
+        <div style="font-size:2.5rem; margin-bottom:12px;">📞</div>
+        <h4 style="font-weight:800; margin-bottom:6px; color:var(--blue);">Step 1: You Call</h4>
+        <p style="font-size:.88rem; color:#666;">Ring us at 860-977-4104 and describe your project.</p>
+      </div>
+      <div style="background:#fff; padding:28px; border-radius:8px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.06);">
+        <div style="font-size:2.5rem; margin-bottom:12px;">💬</div>
+        <h4 style="font-weight:800; margin-bottom:6px; color:var(--blue);">Step 2: Fast Quote</h4>
+        <p style="font-size:.88rem; color:#666;">Most jobs can be quoted right over the phone — no waiting.</p>
+      </div>
+      <div style="background:#fff; padding:28px; border-radius:8px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.06);">
+        <div style="font-size:2.5rem; margin-bottom:12px;">📅</div>
+        <h4 style="font-weight:800; margin-bottom:6px; color:var(--blue);">Step 3: Schedule</h4>
+        <p style="font-size:.88rem; color:#666;">We get you on the calendar fast — often same week.</p>
+      </div>
+      <div style="background:#fff; padding:28px; border-radius:8px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.06);">
+        <div style="font-size:2.5rem; margin-bottom:12px;">🏆</div>
+        <h4 style="font-weight:800; margin-bottom:6px; color:var(--blue);">Step 4: Done Right</h4>
+        <p style="font-size:.88rem; color:#666;">We complete your project professionally and stand behind it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Company 1 Contracting LLC" />
+        <p>No Job Too Small. Done Right. Done Fast. Licensed &amp; insured home remodeling, repairs, and carpentry.</p>
+        <a href="tel:8609774104" class="footer-phone">📞 860-977-4104</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8609774104">📞 860-977-4104</a></li>
+          <li><a href="contact.html">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Company 1 Contracting LLC. All rights reserved.</span>
+      <span>Licensed &amp; Insured · <a href="tel:8609774104">860-977-4104</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('successMsg').style.display='block';
+  e.target.reset();
+  e.target.style.display='none';
+}
+</script>
+</body>
+</html>

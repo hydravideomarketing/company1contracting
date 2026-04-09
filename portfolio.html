@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Company 1 Contracting LLC</title>
+  <meta name="description" content="Browse the project portfolio of Company 1 Contracting — photos and videos of our home remodeling, repairs, carpentry, and exterior work.">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Portfolio-specific styles ── */
+    .portfolio-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .tab-btn {
+      padding: 10px 22px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: #fff;
+      color: #444;
+      transition: all .15s;
+    }
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .tab-btn.all.active { background: var(--orange); border-color: var(--orange); color: var(--black); }
+
+    .portfolio-section { display: none; }
+    .portfolio-section.visible { display: block; }
+
+    .add-media-note {
+      background: linear-gradient(135deg, var(--blue) 0%, #0a2f6e 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .add-media-note .icon { font-size: 2.5rem; flex-shrink: 0; }
+    .add-media-note h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .add-media-note p  { font-size: .88rem; opacity: .8; }
+
+    /* Lightbox-style overlay */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      background: var(--white);
+      border-radius: 10px;
+      max-width: 560px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    .lightbox-close {
+      position: absolute; top: 14px; right: 18px;
+      font-size: 1.4rem; cursor: pointer; opacity: .5;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-inner h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: var(--blue); }
+    .lightbox-inner p { font-size: .92rem; color: #666; margin-bottom: 20px; line-height: 1.7; }
+    .lightbox-inner input {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid #ddd; border-radius: 5px;
+      font-size: .95rem; margin-bottom: 12px;
+    }
+    .lightbox-inner input:focus { outline: none; border-color: var(--blue); }
+
+    .slot-number {
+      position: absolute;
+      top: 10px; left: 12px;
+      font-size: .7rem;
+      font-weight: 800;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ HEADER ══ -->
+<header>
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Company 1 Contracting LLC" />
+        <div class="nav-logo-text">
+          <span class="name">Company 1 Contracting</span>
+          <span class="tag">No Job Too Small</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:8609774104" class="nav-cta">📞 860-977-4104</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Portfolio</div>
+    <h1>Our Work</h1>
+    <p>Photos and videos from completed projects — see the quality for yourself.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ PORTFOLIO BODY ══ -->
+<section class="section">
+  <div class="container">
+
+    <!-- How to add media note -->
+    <div class="add-media-note">
+      <div class="icon">📁</div>
+      <div>
+        <h4>How to Add Your Photos &amp; Videos</h4>
+        <p>Drop your image files (JPG/PNG) into the <strong>portfolio-images/</strong> folder and your video files or YouTube links into <strong>portfolio-videos/</strong>. Then replace the placeholder slots below with <code>&lt;img&gt;</code> tags or YouTube embeds. Slots are organized by project category.</p>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="portfolio-tabs">
+      <button class="tab-btn all active" onclick="showTab('all', this)">🏠 All Projects</button>
+      <button class="tab-btn" onclick="showTab('remodeling', this)">🔨 Remodeling</button>
+      <button class="tab-btn" onclick="showTab('repairs', this)">🛠 Repairs</button>
+      <button class="tab-btn" onclick="showTab('carpentry', this)">🧰 Carpentry</button>
+      <button class="tab-btn" onclick="showTab('exterior', this)">🏡 Exterior</button>
+      <button class="tab-btn" onclick="showTab('videos', this)">▶️ Videos</button>
+    </div>
+
+    <!-- ─── ALL / REMODELING ─── -->
+    <div class="portfolio-section visible" id="tab-all">
+
+      <!-- VIDEOS SECTION -->
+      <div class="portfolio-category">
+        <h3>▶️ Project Videos <span style="font-size:.8rem; font-weight:500; color:#999; margin-left:8px;">(Add your video links here)</span></h3>
+        <div class="media-grid">
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-01</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-02</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-03</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-04</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-05</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')">
+            <span class="slot-number">V-06</span>
+            <div class="slot-icon">▶️</div>
+            <div class="slot-label">Add Video</div>
+            <div class="slot-sub">YouTube / Vimeo link</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMODELING PHOTOS -->
+      <div class="portfolio-category" data-category="remodeling">
+        <h3>🔨 Home Remodeling</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-07</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-08</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Kitchen / Bathroom / Basement</div></div>
+        </div>
+      </div>
+
+      <!-- REPAIRS PHOTOS -->
+      <div class="portfolio-category" data-category="repairs">
+        <h3>🛠 Repairs &amp; Handyman</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repairs / Handyman work</div></div>
+        </div>
+      </div>
+
+      <!-- CARPENTRY PHOTOS -->
+      <div class="portfolio-category" data-category="carpentry">
+        <h3>🧰 Custom Carpentry</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Built-ins / Shelving / Trim</div></div>
+        </div>
+      </div>
+
+      <!-- EXTERIOR PHOTOS -->
+      <div class="portfolio-category" data-category="exterior">
+        <h3>🏡 Exterior Work</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Siding / Decks / Fencing</div></div>
+        </div>
+      </div>
+
+    </div><!-- end #tab-all -->
+
+    <!-- ─── VIDEOS ONLY TAB ─── -->
+    <div class="portfolio-section" id="tab-videos">
+      <div class="portfolio-category">
+        <h3>▶️ All Project Videos</h3>
+        <div class="media-grid">
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-01</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-02</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-03</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-04</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-05</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-06</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-07</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-08</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-09</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-10</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-11</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+          <div class="media-slot video-slot" onclick="openLightbox('video')"><span class="slot-number">V-12</span><div class="slot-icon">▶️</div><div class="slot-label">Add Video</div><div class="slot-sub">YouTube / Vimeo link</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CATEGORY-FILTERED TABS ─── -->
+    <div class="portfolio-section" id="tab-remodeling">
+      <div class="portfolio-category">
+        <h3>🔨 Home Remodeling Projects</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-07</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">R-08</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Remodeling project</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-section" id="tab-repairs">
+      <div class="portfolio-category">
+        <h3>🛠 Repairs &amp; Handyman</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">P-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Repair / Handyman</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-section" id="tab-carpentry">
+      <div class="portfolio-category">
+        <h3>🧰 Custom Carpentry</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">C-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Carpentry work</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-section" id="tab-exterior">
+      <div class="portfolio-category">
+        <h3>🏡 Exterior Work</h3>
+        <div class="media-grid">
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-01</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-02</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-03</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-04</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-05</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+          <div class="media-slot" onclick="openLightbox('photo')"><span class="slot-number">E-06</span><div class="slot-icon">🖼️</div><div class="slot-label">Add Photo</div><div class="slot-sub">Exterior / Deck / Siding</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <div class="lightbox-inner">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <div id="lbPhotoContent">
+      <h3>📸 Add a Project Photo</h3>
+      <p>To add a photo here, place your image file in the <strong>portfolio-images/</strong> folder inside the website directory, then replace the <code>.media-slot</code> element in the HTML with an <code>&lt;img&gt;</code> tag pointing to your file.</p>
+      <p style="background:#f5f5f5; padding:12px; border-radius:5px; font-family:monospace; font-size:.82rem; text-align:left;">&lt;img src="portfolio-images/your-photo.jpg"<br>&nbsp;&nbsp;&nbsp;&nbsp; alt="Project description"<br>&nbsp;&nbsp;&nbsp;&nbsp; style="width:100%; height:100%; object-fit:cover; border-radius:8px;" /&gt;</p>
+      <button class="btn btn-blue" onclick="closeLightbox()" style="margin-top:16px;">Got It</button>
+    </div>
+    <div id="lbVideoContent" style="display:none;">
+      <h3>▶️ Add a Project Video</h3>
+      <p>To add a YouTube or Vimeo video, replace the <code>.video-slot</code> element with an iframe embed code from YouTube/Vimeo. Your video will appear directly in the grid.</p>
+      <p style="background:#f5f5f5; padding:12px; border-radius:5px; font-family:monospace; font-size:.82rem; text-align:left;">&lt;iframe width="100%" height="100%"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/VIDEO_ID"<br>&nbsp;&nbsp;frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+      <button class="btn btn-blue" onclick="closeLightbox()" style="margin-top:16px;">Got It</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ CTA ══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Like What You See? Let's Build Something.</h2>
+    <p>Call for a fast quote on your project — most jobs priced right over the phone.</p>
+    <a href="tel:8609774104" class="cta-phone">📞 860-977-4104</a>
+    <br>
+    <a href="contact.html" class="btn btn-orange btn-lg">Get a Free Quote Today</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Company 1 Contracting LLC" />
+        <p>No Job Too Small. Done Right. Done Fast. Licensed &amp; insured home remodeling, repairs, and carpentry.</p>
+        <a href="tel:8609774104" class="footer-phone">📞 860-977-4104</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8609774104">📞 860-977-4104</a></li>
+          <li><a href="contact.html">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Company 1 Contracting LLC. All rights reserved.</span>
+      <span>Licensed &amp; Insured · <a href="tel:8609774104">860-977-4104</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+
+function showTab(tab, btn) {
+  document.querySelectorAll('.portfolio-section').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('visible');
+  btn.classList.add('active');
+}
+
+function openLightbox(type) {
+  document.getElementById('lbPhotoContent').style.display = type === 'photo' ? 'block' : 'none';
+  document.getElementById('lbVideoContent').style.display = type === 'video' ? 'block' : 'none';
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>
