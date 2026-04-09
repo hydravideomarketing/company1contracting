@@ -101,6 +101,17 @@ header {
   justify-content: space-between;
   height: 72px;
 }
+.nav-centered {
+  justify-content: center;
+}
+.nav-centered .nav-links {
+  justify-content: center;
+  flex: 1;
+}
+.nav-centered .hamburger {
+  position: absolute;
+  right: 24px;
+}
 
 .nav-logo {
   display: flex;
@@ -117,17 +128,27 @@ header {
   line-height: 1.1;
 }
 .nav-logo-text .name {
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 900;
   color: var(--white);
   letter-spacing: .5px;
 }
 .nav-logo-text .tag {
-  font-size: .65rem;
+  font-size: .75rem;
   color: var(--orange);
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+/* ── MOBILE HEADER BOOST ── */
+@media (max-width: 680px) {
+  .nav-inner { height: 84px; }
+  .nav-logo img { height: 68px; }
+  .nav-logo-text .name { font-size: 1.5rem; }
+  .nav-logo-text .tag  { font-size: .8rem; letter-spacing: 1.5px; }
+  .nav-logo { gap: 14px; }
+  .hamburger span { width: 30px; height: 3px; }
 }
 
 .nav-links {
@@ -172,6 +193,48 @@ header {
   display: block; width: 26px; height: 2px;
   background: var(--white); border-radius: 2px;
   transition: all .25s;
+}
+
+/* ── HERO BRAND LOCKUP ── */
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.hero-brand-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 28px rgba(254,195,17,.55));
+  flex-shrink: 0;
+}
+.hero-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.hero-brand-name {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.hero-brand-llc {
+  color: var(--orange);
+  font-size: .65em;
+  font-weight: 900;
+  letter-spacing: 4px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+@media (max-width: 680px) {
+  .hero-brand { gap: 16px; margin-bottom: 32px; padding-bottom: 28px; }
+  .hero-brand-logo { width: 150px; }
+  .hero-brand-name { font-size: 2rem; }
 }
 
 /* ── HERO ── */
