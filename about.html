@@ -12,14 +12,8 @@
 <!-- ══════════════════════════════════════════ HEADER ══ -->
 <header>
   <div class="container">
-    <nav class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="logo.png" alt="Company 1 Contracting LLC" />
-        <div class="nav-logo-text">
-          <span class="name">Company 1 Contracting</span>
-          <span class="tag">No Job Too Small</span>
-        </div>
-      </a>
+    <nav class="nav-inner nav-centered">
+
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
@@ -27,7 +21,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="testimonials.html">Testimonials</a>
         <a href="contact.html">Contact</a>
-        <a href="tel:8609774104" class="nav-cta">📞 860-977-4104</a>
+        <a href="tel:8608305506" class="nav-cta">📞 860-830-5506</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleNav()">
         <span></span><span></span><span></span>
@@ -49,15 +43,29 @@
 <section class="section">
   <div class="container">
     <div class="about-grid">
-      <div class="about-logo-wrap">
-        <img src="logo.png" alt="Company 1 Contracting LLC Logo" />
+      <!-- ✏️ TO ADD REAL PHOTOS: Place your image files (e.g. faucet.jpg, fan.jpg)
+           in the company1-website folder, then replace each placeholder block below with:
+           <img src="faucet.jpg" alt="Faucet installation" style="width:100%;height:100%;object-fit:cover;border-radius:10px;display:block;" /> -->
+      <div class="about-logo-wrap" style="padding:20px; display:flex; flex-direction:column; gap:16px; align-items:stretch; background:transparent; box-shadow:none;">
+
+        <!-- PHOTO SLOT 1: Water Faucet -->
+        <div style="border-radius:10px; min-height:190px; background:linear-gradient(135deg,#0d1e3f 0%,#0a0a0a 100%); border:2px dashed rgba(254,195,17,.35); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; gap:8px;">
+          <div style="font-size:2.8rem;">🚿</div>
+          <div style="font-weight:700; color:#fff; font-size:1rem; letter-spacing:.3px;">Faucet Installation</div>
+          <div style="font-size:.78rem; color:rgba(255,255,255,.4); margin-top:2px;">Replace with: faucet.jpg</div>
+        </div>
+
+        <!-- PHOTO SLOT 2: Ceiling Fan -->
+        <div style="border-radius:10px; min-height:190px; background:linear-gradient(135deg,#0d1e3f 0%,#0a0a0a 100%); border:2px dashed rgba(254,195,17,.35); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; gap:8px;">
+          <div style="font-size:2.8rem;">🌀</div>
+          <div style="font-weight:700; color:#fff; font-size:1rem; letter-spacing:.3px;">Ceiling Fan Installation</div>
+          <div style="font-size:.78rem; color:rgba(255,255,255,.4); margin-top:2px;">Replace with: fan.jpg</div>
+        </div>
+
       </div>
       <div class="about-content">
         <span class="section-tag">Who We Are</span>
-        <h2 class="section-title">Built on the Jobs Others Turned Away</h2>
-        <p style="color:#555; line-height:1.8; margin-bottom:16px;">
-          At Company 1 Contracting, we believe every project matters — whether it's a full home remodel or a quick repair. We started with a simple idea: homeowners deserve a contractor who actually shows up, does the work right, and treats every job — big or small — with the same level of care and professionalism.
-        </p>
+        <h2 class="section-title">Quality Doesn't Clock Out on Small Jobs</h2>
         <p style="color:#555; line-height:1.8; margin-bottom:24px;">
           Your home is your biggest investment. We're here to help you improve it, protect it, and bring your vision to life — without the headaches, the runaround, or the inflated quotes.
         </p>
@@ -65,7 +73,7 @@
           <li>Licensed &amp; fully insured for your peace of mind</li>
           <li>Quick scheduling — often same week</li>
           <li>Phone quotes available for most jobs</li>
-          <li>No job too small — we mean it</li>
+          <li>Appliance installation — all major brands &amp; models</li>
           <li>Competitive, transparent pricing</li>
           <li>We show up on time and stand behind our work</li>
         </ul>
@@ -103,7 +111,7 @@
       <div style="background:#fff; padding:32px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.07); border-top:4px solid var(--orange);">
         <div style="font-size:2rem; margin-bottom:12px;">🏠</div>
         <h4 style="font-weight:800; margin-bottom:8px; color:var(--blue);">Every Job Counts</h4>
-        <p style="font-size:.9rem; color:#666; line-height:1.6;">Whether it's a $50 fix or a $50,000 remodel, you get our full attention and best work every single time.</p>
+        <p style="font-size:.9rem; color:#666; line-height:1.6;">Whether it's a quick fix or a major project, you get our full attention and best work every single time.</p>
       </div>
     </div>
   </div>
@@ -119,13 +127,13 @@
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;">
       <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
-        <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🔨 Home Remodeling</h3>
+        <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🔌 Appliance Installation</h3>
         <ul style="list-style:none; padding:0;">
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Kitchen remodeling</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Bathroom renovations</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Basement finishing</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Interior redesigns</li>
-          <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Flooring, drywall, painting</li>
+          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Refrigerators &amp; dishwashers</li>
+          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Stoves, ovens &amp; ranges</li>
+          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Washers &amp; dryers</li>
+          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Microwaves &amp; range hoods</li>
+          <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Quartz &amp; granite countertops</li>
         </ul>
       </div>
       <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
@@ -157,7 +165,7 @@
   <div class="container">
     <h2>Your Home Deserves the Best</h2>
     <p>Let's talk about your project — most jobs quoted right over the phone.</p>
-    <a href="tel:8609774104" class="cta-phone">📞 860-977-4104</a>
+    <a href="tel:8608305506" class="cta-phone">📞 860-830-5506</a>
     <br>
     <a href="contact.html" class="btn btn-orange btn-lg">Get a Free Quote</a>
   </div>
@@ -169,8 +177,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="logo.png" alt="Company 1 Contracting LLC" />
-        <p>No Job Too Small. Done Right. Done Fast. Licensed &amp; insured home remodeling, repairs, and carpentry.</p>
-        <a href="tel:8609774104" class="footer-phone">📞 860-977-4104</a>
+        <p>Quality Handyman Services. Done Fast. Done Right. Licensed &amp; insured handyman services, repairs, and appliance installation.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
@@ -186,14 +193,13 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:8609774104">📞 860-977-4104</a></li>
-          <li><a href="contact.html">Get a Quote</a></li>
+          <li><a href="contact.html">📞 Get a Free Quote</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Company 1 Contracting LLC. All rights reserved.</span>
-      <span>Licensed &amp; Insured · <a href="tel:8609774104">860-977-4104</a></span>
+      <span>© 2026 Company 1 Contracting LLC. All rights reserved.</span>
+      <span>Licensed &amp; Insured · <a href="tel:8608305506">860-830-5506</a></span>
     </div>
   </div>
 </footer>
