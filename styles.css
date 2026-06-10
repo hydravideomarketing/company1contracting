@@ -614,7 +614,7 @@ footer ul li a:hover { color: var(--orange); }
   width: fit-content;
 }
 .veteran-badge img {
-  height: 72px;
+  height: 110px;
   width: auto;
   filter: drop-shadow(0 2px 12px rgba(0,0,0,.6));
   flex-shrink: 0;
