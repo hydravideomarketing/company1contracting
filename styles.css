@@ -34,7 +34,7 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; }
 ul { list-style: none; }
 
-/* -- UTILITY -- */
+/* ── UTILITY ── */
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 .section    { padding: 72px 0; }
 .section-alt { background: var(--gray); }
@@ -92,7 +92,7 @@ ul { list-style: none; }
 .section-dark .section-sub,
 .section-blue .section-sub { color: rgba(255,255,255,.8); }
 
-/* -- HEADER / NAV -- */
+/* ── HEADER / NAV ── */
 header {
   position: sticky;
   top: 0;
@@ -147,7 +147,7 @@ header {
   font-weight: 700;
 }
 
-/* -- MOBILE HEADER BOOST -- */
+/* ── MOBILE HEADER BOOST ── */
 @media (max-width: 680px) {
   .nav-inner { height: 84px; }
   .nav-logo img { height: 68px; }
@@ -201,7 +201,7 @@ header {
   transition: all .25s;
 }
 
-/* -- HERO BRAND LOCKUP -- */
+/* ── HERO BRAND LOCKUP ── */
 .hero-brand {
   display: flex;
   flex-direction: column;
@@ -248,10 +248,11 @@ header {
   .hero-brand { gap: 12px; margin-bottom: 32px; padding-bottom: 28px; }
   .hero-brand-top { gap: 16px; }
   .hero-brand-logo { width: 150px; }
-  .hero-brand-name { font-family: 'Oswald', sans-serif; font-size: 2rem; }
+  .hero-brand-name {
+  font-family: 'Oswald', sans-serif; font-size: 2rem; }
 }
 
-/* -- HERO -- */
+/* ── HERO ── */
 .hero {
   background: linear-gradient(135deg, var(--black) 0%, #0d1e3f 100%);
   color: var(--white);
@@ -329,7 +330,7 @@ header {
   flex-shrink: 0;
 }
 
-/* -- SERVICES GRID -- */
+/* ── SERVICES GRID ── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -367,7 +368,7 @@ header {
 }
 .service-list li::before { content: '\2713'; color: var(--orange); font-weight: 900; }
 
-/* -- WHY US -- */
+/* ── WHY US ── */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -390,7 +391,7 @@ header {
 .why-card p  { font-size: .88rem; color: #666; line-height: 1.6; }
 .section-dark .why-card p { color: rgba(255,255,255,.65); }
 
-/* -- CTA BANNER -- */
+/* ── CTA BANNER ── */
 .cta-banner {
   background: linear-gradient(90deg, var(--blue) 0%, #0a2f6e 100%);
   color: var(--white);
@@ -409,7 +410,7 @@ header {
 }
 .cta-phone:hover { opacity: .85; }
 
-/* -- FOOTER -- */
+/* ── FOOTER ── */
 footer {
   background: var(--black);
   color: rgba(255,255,255,.65);
@@ -437,7 +438,7 @@ footer ul li a:hover { color: var(--orange); }
 }
 .footer-bottom a { color: var(--orange); }
 
-/* -- PAGE HERO (inner pages) -- */
+/* ── PAGE HERO (inner pages) ── */
 .page-hero {
   background: linear-gradient(135deg, var(--black) 0%, var(--blue) 100%);
   color: var(--white);
@@ -449,7 +450,7 @@ footer ul li a:hover { color: var(--orange); }
 .breadcrumb { font-size: .8rem; color: rgba(255,255,255,.5); margin-bottom: 12px; }
 .breadcrumb a { color: var(--orange); }
 
-/* -- ABOUT -- */
+/* ── ABOUT ── */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -474,7 +475,7 @@ footer ul li a:hover { color: var(--orange); }
 }
 .about-checks li::before { content: '\2714'; color: var(--orange); font-weight: 900; font-size: 1rem; }
 
-/* -- CONTACT -- */
+/* ── CONTACT ── */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -525,7 +526,7 @@ footer ul li a:hover { color: var(--orange); }
 .form-group select:focus { outline: none; border-color: var(--blue); }
 .form-group textarea { resize: vertical; min-height: 120px; }
 
-/* -- TESTIMONIALS -- */
+/* ── TESTIMONIALS ── */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -557,7 +558,7 @@ footer ul li a:hover { color: var(--orange); }
 .leave-review-box h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
 .leave-review-box p  { color: rgba(255,255,255,.75); margin-bottom: 24px; }
 
-/* -- PORTFOLIO -- */
+/* ── PORTFOLIO ── */
 .portfolio-category { margin-bottom: 64px; }
 .portfolio-category h3 {
   font-size: 1.3rem; font-weight: 800; color: var(--blue);
@@ -596,7 +597,7 @@ footer ul li a:hover { color: var(--orange); }
 .video-slot { border-color: #bbd; }
 .video-slot:hover { border-color: var(--blue); background: #eef2ff; }
 
-/* -- RESPONSIVE -- */
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-logo { display: none; }
@@ -604,7 +605,7 @@ footer ul li a:hover { color: var(--orange); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* -- VETERAN INSTALLATION PARTNERSHIP BADGE -- */
+/* ── VETERAN INSTALLATION PARTNERSHIP BADGE ── */
 .veteran-badge {
   display: flex;
   align-items: center;
@@ -655,7 +656,7 @@ footer ul li a:hover { color: var(--orange); }
   .trust-strip { gap: 16px; }
 }
 
-/* -- VETERAN INSTALLATION - NEW STYLES -- */
+/* ── VETERAN INSTALLATION — NEW STYLES ── */
 .veteran-badge-new {
   display: flex;
   align-items: center;
@@ -670,7 +671,7 @@ footer ul li a:hover { color: var(--orange); }
 }
 .veteran-badge-new-text {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 900;
   color: var(--vet-white);
   letter-spacing: 1px;
@@ -685,7 +686,7 @@ footer ul li a:hover { color: var(--orange); }
   letter-spacing: 4px;
 }
 
-/* Service card - Veteran RWB theme */
+/* Service card — Veteran RWB theme */
 .service-card-veteran {
   background: linear-gradient(135deg, var(--vet-blue) 0%, #1a1a4e 100%);
   border-radius: 8px;
@@ -752,7 +753,7 @@ footer ul li a:hover { color: var(--orange); }
 .vet-stars-sm .r { color: var(--vet-red); }
 .vet-stars-sm .w { color: #fff; }
 
-/* Expertise card - About page */
+/* Expertise card — About page */
 .vet-expertise-card {
   padding: 28px;
   border: 1.5px solid var(--vet-blue);
@@ -768,7 +769,7 @@ footer ul li a:hover { color: var(--orange); }
 .vet-expertise-card .ck { color: var(--vet-red); font-weight: 900; }
 .vet-logo-sm { height: 32px; width: auto; filter: drop-shadow(0 1px 4px rgba(178,34,52,.5)); flex-shrink: 0; }
 
-/* Logo-above-card row - matches footer dark brand strip */
+/* Logo-above-card row — matches footer dark brand strip */
 .card-brand-row {
   background: var(--black);
   border-radius: 8px 8px 0 0;
