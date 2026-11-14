@@ -16,7 +16,6 @@
 <header>
   <div class="container">
     <nav class="nav-inner nav-centered">
-
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
@@ -37,7 +36,7 @@
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
-    <h1>About Company 1 Contracting</h1>
+    <h1 style="line-height:1.1;">About Company 1 Contracting<br><span style="font-size:.6em; color:#B22234; font-weight:900; letter-spacing:1px; line-height:1; display:block; margin-top:2px;">&amp; Veteran Installation</span></h1>
     <p>Reliable. Fast. Professional. We treat every job like it's the most important one.</p>
   </div>
 </section>
@@ -47,11 +46,8 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-logo-wrap" style="padding:0; display:flex; flex-direction:column; gap:16px; align-items:stretch; background:transparent; box-shadow:none;">
-
         <img src="faucet.jpg" alt="Faucet installation" style="width:100%; height:220px; object-fit:cover; border-radius:10px; display:block;" />
-
         <img src="fan.jpg" alt="Ceiling fan installation" style="width:100%; height:220px; object-fit:cover; border-radius:10px; display:block;" />
-
       </div>
       <div class="about-content">
         <span class="section-tag">Who We Are</span>
@@ -63,7 +59,12 @@
           <li>Licensed &amp; fully insured for your peace of mind</li>
           <li>Quick scheduling — often same week</li>
           <li>Phone quotes available for most jobs</li>
-          <li>Appliance installation — all major brands &amp; models</li>
+          <li>Appliance installation — all major brands &amp; models
+            <span class="vet-inline">
+              <img src="veteran-logo.png" alt="Veteran Installation" />
+              <span>Veteran<br>Installation<br><span class="vet-stars-sm"><span class="r">★</span><span class="w">★</span><span class="r">★</span></span></span>
+            </span>
+          </li>
           <li>Competitive, transparent pricing</li>
           <li>We show up on time and stand behind our work</li>
         </ul>
@@ -81,7 +82,6 @@
     <p style="max-width:680px; margin:0 auto 48px; color:#555; font-size:1.05rem; line-height:1.8;">
       We exist to make home improvement less stressful for homeowners. No upsells, no surprises, no ghosting. Just quality work, done fast, at a price that's fair.
     </p>
-
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px; text-align:left;">
       <div style="background:#fff; padding:32px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.07); border-top:4px solid var(--orange);">
         <div style="font-size:2rem; margin-bottom:12px;">🎯</div>
@@ -114,37 +114,84 @@
       <span class="section-tag">Our Expertise</span>
       <h2 class="section-title">Everything Your Home Needs</h2>
     </div>
-
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;">
-      <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
-        <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🔌 Appliance Installation</h3>
-        <ul style="list-style:none; padding:0;">
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Refrigerators &amp; dishwashers</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Stoves, ovens &amp; ranges</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Washers &amp; dryers</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Microwaves &amp; range hoods</li>
-          <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Quartz &amp; granite countertops</li>
-        </ul>
+
+      <!-- Veteran Installation — Appliance -->
+      <div>
+        <div class="card-brand-row">
+          <img src="veteran-logo.png" alt="Veteran Installation" style="filter:drop-shadow(0 2px 6px rgba(178,34,52,.5));" />
+          <span style="color:#3C3B6E;">Veteran<br>Installation</span>
+        </div>
+        <div class="vet-expertise-card">
+          <h3>🔌 Appliance Installation <img src="veteran-logo.png" alt="Veteran Installation" class="vet-logo-sm" /></h3>
+          <div style="margin-bottom:12px; font-size:.85rem; color:rgba(255,255,255,.7);">
+            <span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span>
+            &nbsp; Veteran Installation Partner
+          </div>
+          <ul>
+            <li><span class="ck">✓</span> Refrigerators &amp; dishwashers</li>
+            <li><span class="ck">✓</span> Stoves, ovens &amp; ranges</li>
+            <li><span class="ck">✓</span> Washers &amp; dryers</li>
+            <li><span class="ck">✓</span> Microwaves &amp; range hoods</li>
+            <li><span class="ck">✓</span> Quartz &amp; granite countertops</li>
+          </ul>
+        </div>
       </div>
-      <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
-        <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🏠 Repairs &amp; Handyman</h3>
-        <ul style="list-style:none; padding:0;">
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> General home repairs</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Fixture replacements</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Door &amp; window repairs</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Trim &amp; carpentry</li>
-          <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Minor plumbing &amp; electrical</li>
-        </ul>
+
+      <!-- Company 1 — Repairs -->
+      <div>
+        <div class="card-brand-row">
+          <img src="logo.png" alt="Company 1 Contracting" />
+          <span style="color:var(--blue);">Company 1<br>Contracting</span>
+        </div>
+        <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
+          <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🏠 Repairs &amp; Handyman</h3>
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> General home repairs</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Fixture replacements</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Door &amp; window repairs</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Trim &amp; carpentry</li>
+            <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Minor plumbing &amp; electrical</li>
+          </ul>
+        </div>
       </div>
-      <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
-        <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🧰 Carpentry &amp; Exterior</h3>
-        <ul style="list-style:none; padding:0;">
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Custom shelving &amp; built-ins</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Siding &amp; deck work</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Fence installation</li>
-          <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Exterior painting</li>
-          <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Framing &amp; accent walls</li>
-        </ul>
+
+      <!-- Company 1 — Carpentry -->
+      <div>
+        <div class="card-brand-row">
+          <img src="logo.png" alt="Company 1 Contracting" />
+          <span style="color:var(--blue);">Company 1<br>Contracting</span>
+        </div>
+        <div style="padding:28px; border:1.5px solid #e8e8e8; border-radius:8px;">
+          <h3 style="color:var(--blue); font-size:1.1rem; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px;">🧰 Carpentry &amp; Exterior</h3>
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Custom shelving &amp; built-ins</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Siding &amp; deck work</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Fence installation</li>
+            <li style="padding:5px 0; border-bottom:1px solid #f5f5f5; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Exterior painting</li>
+            <li style="padding:5px 0; font-size:.9rem; color:#555; display:flex; gap:8px; align-items:center;"><span style="color:var(--orange);font-weight:900;">✓</span> Framing &amp; accent walls</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ VETERAN INSTALLATION ══ -->
+<section style="background:linear-gradient(135deg,#3C3B6E 0%,#1a1a4e 100%); padding:64px 0;">
+  <div class="container">
+    <div style="display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center;">
+      <img src="veteran-logo.png" alt="Veteran Installation" style="height:120px; width:auto; filter:drop-shadow(0 4px 20px rgba(178,34,52,.6));" />
+      <div style="max-width:520px;">
+        <div style="font-size:1rem; margin-bottom:8px;">
+          <span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span>
+        </div>
+        <span style="display:inline-block; background:#B22234; color:#fff; font-size:.7rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 12px; border-radius:2px; margin-bottom:12px;">Proud Partner</span>
+        <h2 style="font-family:'Oswald',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:900; color:#fff; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Veteran Installation</h2>
+        <p style="color:rgba(255,255,255,.8); font-size:.95rem; line-height:1.8;">
+          Company 1 Contracting is a proud Veteran Installation partner. We handle professional appliance installation for refrigerators, washers, dryers, stoves, dishwashers, and more — fast, clean, and done right.
+        </p>
       </div>
     </div>
   </div>
@@ -166,8 +213,19 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Company 1 Contracting LLC" />
-        <p>Quality Handyman Services. Done Fast. Done Right. Licensed &amp; insured handyman services, repairs, and appliance installation.</p>
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:12px;">
+          <img src="logo.png" alt="Company 1 Contracting LLC" style="height:70px; width:auto;" />
+          <div style="width:1px; height:60px; background:rgba(255,255,255,.2);"></div>
+          <img src="veteran-logo.png" alt="Veteran Installation" style="height:70px; width:auto; filter:drop-shadow(0 2px 8px rgba(178,34,52,.4));" />
+        </div>
+        <p>Quality Handyman Services. Done Fast. Done Right.</p>
+        <a href="tel:8608305506" class="footer-phone">📞 860-830-5506</a>
+        <p style="color:rgba(255,255,255,.55); font-size:.82rem; margin-top:10px; line-height:1.6; border-top:1px solid rgba(255,255,255,.1); padding-top:10px;">
+          Proud Veteran Installation Partner — professional appliance installation for refrigerators, washers, stoves, dishwashers &amp; more.
+        </p>
+        <div style="margin-top:6px; display:flex; gap:5px; font-size:.9rem;">
+          <span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span><span style="color:#fff;">★</span><span style="color:#B22234;">★</span>
+        </div>
       </div>
       <div>
         <h4>Quick Links</h4>
